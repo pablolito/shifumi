@@ -6,7 +6,6 @@ const useRound = () => {
     const [rounds, setRounds] = useState<Round[]>([])
     
     const onUserAction = (userAction: Action) => {
-        console.log(userAction);
         const generateComputerAction = Math.floor(Math.random() * 3) + 1 as Action
         const result = getResult(userAction, generateComputerAction)
         setRounds([{userAction: userAction, computerAction: generateComputerAction, result: result }, ...rounds])
